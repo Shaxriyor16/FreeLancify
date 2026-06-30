@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelancify - Find & Hire Top Talent</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar" id="topbar">
+    <span>⚡ Freelancify Shop is now Live! Get your Pro Bundle today.</span>
+    <a href="#">Go to Shop &rarr;</a>
+    <i class="ti ti-x topbar-close" onclick="document.getElementById('topbar').style.display='none'"></i>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">F</div>
+        <div class="logo-text">Free<span>Lancify</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Find Work</a>
+        <a href="#" class="nav-link">Freelancers</a>
+        <a href="#" class="nav-link">Shop</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="btn-theme-toggle" id="theme-toggle">
+        <i class="ti ti-moon"></i>
+      </button>
+      <div class="nav-divider"></div>
+      <a href="login.html" class="btn btn-ghost">Log in</a>
+      <a href="register.html" class="btn btn-primary">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner" id="hero-slider">
+    <div class="hero-progress"><div class="hero-progress-fill" id="progress-fill"></div></div>
+    
+    <div class="hero-slide slide-1 active">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-dot"></div> 25,840+ active jobs waiting
+      </div>
+      <h1 class="hero-title">Find your next <span class="highlight-1">big opportunity.</span></h1>
+      <p class="hero-subtitle">Browse thousands of jobs matching your skills and schedule.</p>
+      <div class="hero-search">
+        <i class="ti ti-search"></i>
+        <input type="text" placeholder="Search jobs, skills, keywords...">
+        <button class="btn">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-icon"><i class="ti ti-briefcase"></i></div>
+        <div><div class="stat-num">25,840+</div><div class="stat-label">Active Jobs</div></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="ti ti-users"></i></div>
+        <div><div class="stat-num">140,500+</div><div class="stat-label">Freelancers</div></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="ti ti-shield-check"></i></div>
+        <div><div class="stat-num">$250M+</div><div class="stat-label">Paid Safely</div></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="ti ti-star"></i></div>
+        <div><div class="stat-num">4.9/5</div><div class="stat-label">Client Rating</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Layout -->
+  <main class="main-layout">
+    
+    <!-- Sidebar Filters -->
+    <aside class="filter-panel">
+      <div class="filter-header">
+        <h3>Filters</h3>
+        <a href="#" onclick="alert('Filters cleared')">Clear all</a>
+      </div>
+      
+      <!-- Category -->
+      <div class="filter-section open">
+        <div class="fs-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="fs-label">Category</span>
+          <div class="fs-right">
+            <span class="fs-count">6</span>
+            <i class="ti ti-chevron-down fs-chevron"></i>
+          </div>
+        </div>
+        <div class="fs-content">
+          <div class="fs-row"><label class="custom-check"><input type="checkbox" checked><div class="check-box"><svg><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="custom-check-text">Web Development</span></label><span class="fs-row-count">124</span></div>
+          <div class="fs-row"><label class="custom-check"><input type="checkbox"><div class="check-box"><svg><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="custom-check-text">Mobile Apps</span></label><span class="fs-row-count">87</span></div>
+          <div class="fs-row"><label class="custom-check"><input type="checkbox"><div class="check-box"><svg><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="custom-check-text">UI / UX Design</span></label><span class="fs-row-count">63</span></div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="filter-section open">
+        <div class="fs-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="fs-label">Skills</span>
+          <div class="fs-right"><i class="ti ti-chevron-down fs-chevron"></i></div>
+        </div>
+        <div class="fs-content">
+          <div class="chip-group">
+            <div class="skill-chip active" onclick="this.classList.toggle('active')">React</div>
+            <div class="skill-chip" onclick="this.classList.toggle('active')">Node.js</div>
+            <div class="skill-chip active" onclick="this.classList.toggle('active')">Python</div>
+            <div class="skill-chip" onclick="this.classList.toggle('active')">Figma</div>
+            <div class="skill-chip" onclick="this.classList.toggle('active')">Flutter</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary filter-apply">Apply Filters</button>
+    </aside>
+
+    <!-- Jobs List -->
+    <section class="jobs-column">
+      <div class="jobs-header">
+        <h2 class="jobs-title">Recommended Projects</h2>
+        <div class="jobs-sort">
+          Sort by:
+          <select>
+            <option>Latest</option>
+            <option>Budget (High to Low)</option>
+            <option>Most Proposals</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Sample Job Card -->
+      <div class="card job-card">
+        <div class="jc-top">
+          <div class="jc-avatar">TG</div>
+          <div style="flex:1">
+            <div class="jc-title">Senior React Developer for CRM Platform</div>
+            <div class="jc-price">$4,000 – $6,000 <span class="jc-level">Expert Level</span></div>
+          </div>
+        </div>
+        
+        <div class="jc-meta">
+          <span><i class="ti ti-clock"></i> 3 hours ago</span>
+          <span class="badge badge-fixed">Fixed Price</span>
+          <span class="badge badge-urgent">Urgent</span>
+          <span style="color:var(--color-primary)"><i class="ti ti-shield-check"></i> Verified Client</span>
+          <span class="badge" style="background:var(--color-danger-light); color:#A32D2D">14 proposals</span>
+        </div>
+
+        <div class="jc-desc">
+          We are looking for an experienced React developer to help build a custom CRM platform from scratch. You will be responsible for architecture, setting up the foundation, and working closely with our UI designer. Must have deep knowledge of modern React patterns (Hooks, Context, Zustand) and performance optimization.
+        </div>
+
+        <div class="jc-footer">
+          <div class="chip-group">
+            <span class="skill-chip">React</span>
+            <span class="skill-chip">TypeScript</span>
+            <span class="skill-chip">Tailwind CSS</span>
+          </div>
+          <div class="jc-actions">
+            <button class="btn-icon"><i class="ti ti-share-2"></i></button>
+            <button class="btn-icon" onclick="this.classList.toggle('saved'); this.querySelector('i').classList.toggle('ti-bookmark'); this.querySelector('i').classList.toggle('ti-bookmark-filled');"><i class="ti ti-bookmark"></i></button>
+            <button class="btn btn-primary btn-sm">Apply Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample Job Card 2 -->
+      <div class="card job-card">
+        <div class="jc-top">
+          <div class="jc-avatar" style="background:#E6F1FB; color:#185FA5">DB</div>
+          <div style="flex:1">
+            <div class="jc-title">Python Backend Developer for API Integration</div>
+            <div class="jc-price">$30 – $50 / hr <span class="jc-level">Intermediate Level</span></div>
+          </div>
+        </div>
+        
+        <div class="jc-meta">
+          <span><i class="ti ti-clock"></i> 5 hours ago</span>
+          <span class="badge badge-hourly">Hourly Rate</span>
+          <span style="color:var(--color-primary)"><i class="ti ti-shield-check"></i> Verified Client</span>
+        </div>
+
+        <div class="jc-desc">
+          Need a Python developer capable of building complex API integrations using FastAPI. Will require connection to Stripe, Twilio, and SendGrid APIs. A solid understanding of async programming in Python is required.
+        </div>
+
+        <div class="jc-footer">
+          <div class="chip-group">
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">FastAPI</span>
+            <span class="skill-chip">PostgreSQL</span>
+          </div>
+          <div class="jc-actions">
+            <button class="btn-icon"><i class="ti ti-share-2"></i></button>
+            <button class="btn-icon"><i class="ti ti-bookmark"></i></button>
+            <button class="btn btn-primary btn-sm">Apply Now</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="js/router.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "FreeLancify",
+  "description": "Professional freelance platform bridging clients and freelancers with advanced project management, messaging, and payment integration.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

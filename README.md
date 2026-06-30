@@ -1,11 +1,33 @@
-<div align="center">
+# Freelancify
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Freelancify bu freelancer marketplace platformasi:
+- Frontend: Vanilla HTML + CSS + JS (Hech qanday Framework yo'q)
+- Backend: FastAPI (Python)
+- Database: PostgreSQL, Redis, Elasticsearch
 
-  <h1>Built with AI Studio</h2>
+## BOSHLASH TARTIBI
+1. INFRATUZILMA ISHGA TUSHIRISH:
+   `docker-compose up -d`
+   (PostgreSQL, Redis, Elasticsearch ishga tushadi)
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+2. BACKEND SOZLASH:
+   cd backend
+   python -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   cp .env.example .env
+   alembic upgrade head
+   uvicorn main:app --reload --port 8000
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+3. FRONTEND ISHGA TUSHIRISH:
+   cd frontend
+   Live Server bilan index.html ochiladi
+   YOKI: `npx serve . -p 5500`
 
-</div>
+4. API HUJJATLARI:
+   http://localhost:8000/docs (Swagger UI)
+   http://localhost:8000/redoc (ReDoc)
+
+5. BIRINCHI ADMIN YARATISH:
+   Register qiling. DB da user role ni admindek o'zgartiring:
+   `UPDATE users SET role = 'admin' WHERE email = 'your@email.com';`

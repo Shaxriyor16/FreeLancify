@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Freelancify</title>
+    <link href="/src/index.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-slate-900 min-h-screen flex items-center justify-center p-4"
+  >
+    <div
+      class="w-full max-w-2xl bg-white dark:bg-slate-800 rounded-3xl shadow-xl border border-gray-100 dark:border-slate-700 overflow-hidden relative"
+    >
+      <div class="p-8 md:p-10">
+        <div class="flex items-center gap-2 mb-8">
+          <div
+            class="w-8 h-8 bg-primary rounded-xl flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              ></path>
+            </svg>
+          </div>
+          <span
+            class="font-display font-bold text-xl text-gray-900 dark:text-white tracking-tight"
+            >Freelancify</span
+          >
+
+          <div class="ml-auto flex items-center gap-4">
+            <select
+              id="lang-switcher"
+              class="bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 text-xs font-bold py-1.5 px-2.5 rounded-lg border-none focus:ring-2 focus:ring-primary outline-none cursor-pointer"
+            >
+              <option value="en">EN</option>
+              <option value="uz">UZ</option>
+              <option value="ru">RU</option>
+            </select>
+            <span class="text-sm font-bold text-gray-500 dark:text-gray-400"
+              ><span id="step-word">Step</span>
+              <span id="current-step-indicator">1</span>
+              <span id="of-word">of</span> 5</span
+            >
+          </div>
+        </div>
+
+        <h1
+          class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-2"
+          id="step-title"
+        >
+          Personal Information
+        </h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-8" id="step-desc">
+          Let's get to know you. Please provide your basic details.
+        </p>
+
+        <!-- Progress Bar -->
+        <div class="flex gap-2 w-full mb-8">
+          <div
+            class="h-1.5 flex-1 rounded-full bg-primary transition-all duration-300"
+            id="progress-1"
+          ></div>
+          <div
+            class="h-1.5 flex-1 rounded-full bg-gray-200 dark:bg-slate-700 transition-all duration-300"
+            id="progress-2"
+          ></div>
+          <div
+            class="h-1.5 flex-1 rounded-full bg-gray-200 dark:bg-slate-700 transition-all duration-300"
+            id="progress-3"
+          ></div>
+          <div
+            class="h-1.5 flex-1 rounded-full bg-gray-200 dark:bg-slate-700 transition-all duration-300"
+            id="progress-4"
+          ></div>
+          <div
+            class="h-1.5 flex-1 rounded-full bg-gray-200 dark:bg-slate-700 transition-all duration-300"
+            id="progress-5"
+          ></div>
+        </div>
+
+        <form id="register-form" class="space-y-6">
+          <!-- STEP 1: Role Selection -->
+          <div
+            id="step-1-content"
+            class="space-y-5 block transition-all duration-300"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Freelancer Role -->
+              <label class="relative cursor-pointer group">
+                <input
+                  type="radio"
+                  name="role"
+                  value="freelancer"
+                  class="peer sr-only"
+                  checked
+                />
+                <div
+                  class="p-6 border-2 border-gray-200 dark:border-slate-700 rounded-2xl peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all text-center h-full flex flex-col items-center justify-center gap-3"
+                >
+                  <div
+                    class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <svg
+                      class="w-7 h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-900 dark:text-white text-lg">
+                      I'm a Freelancer
+                    </h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                      Looking for high-paying projects
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="absolute top-4 right-4 text-primary opacity-0 peer-checked:opacity-100 transition-opacity"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+              </label>
+
+              <!-- Client Role -->
+              <label class="relative cursor-pointer group">
+                <input
+                  type="radio"
+                  name="role"
+                  value="client"
+                  class="peer sr-only"
+                />
+                <div
+                  class="p-6 border-2 border-gray-200 dark:border-slate-700 rounded-2xl peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all text-center h-full flex flex-col items-center justify-center gap-3"
+                >
+                  <div
+                    class="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <svg
+                      class="w-7 h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-900 dark:text-white text-lg">
+                      I'm a Client
+                    </h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                      Hiring top-tier professionals
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="absolute top-4 right-4 text-primary opacity-0 peer-checked:opacity-100 transition-opacity"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 2: Personal -->
+          <div
+            id="step-2-content"
+            class="space-y-5 hidden transition-all duration-300 opacity-0 relative"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label
+                  class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5"
+                  >First Name</label
+                >
+                <input
+                  type="text"
+                  id="firstName"
+                  class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5"
+                  >Last Name</label
+                >
+                <input
+                  type="text"
+                  id="lastName"
+                  class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label
+                  class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="reg-email"
+                  class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5"
+                  >Phone Number</label
+                >
+                <div class="flex items-center w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl focus-within:ring-2 focus-within:ring-primary transition-all overflow-hidden">
+                  <span id="phone-prefix" class="pl-4 pr-2 py-3 text-sm font-bold text-gray-700 dark:text-gray-300 bg-gray-200/50 dark:bg-slate-800/50 border-r border-gray-200 dark:border-slate-700 transition-all opacity-50">-</span>
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="w-full bg-transparent px-3 py-3 text-sm text-gray-900 dark:text-white focus:outline-none placeholder:text-gray-400 disabled:opacity-50"
+                    placeholder="Select country first"
+                    disabled
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div class="relative">
+                <label
+                  class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5"
+                  >Country</label
+                >
+                <select
+                  id="country"
+                  class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all disabled:opacity-50"
+                  disabled
+                >
+                  <option value="" disabled selected>
+                    Loading locations...
+                  </option>
+                </select>
+                <div
+                  id="country-loader"
+                  class="absolute right-4 top-10 pointer-events-none w-4 h-4 text-primary animate-spin"
+                >
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="relative">
+                <label
+                  class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5"
+                  >City</label
+                >
+                <select
+                  id="city"
+                  class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all disabled:opacity-50"
+                  disabled
+                >
+                  <option value="" disabled selected>
+                    Select a country first
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: Email Verification -->
+          <div
+            id="step-3-content"
+            class="space-y-5 hidden transition-all duration-300 opacity-0 relative"
+          >
+            <div class="flex flex-col items-center justify-center p-6 text-center border-2 border-dashed border-gray-200 dark:border-slate-700 rounded-2xl bg-gray-50 dark:bg-slate-800/50">
+              <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Check your email</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">
+                We've sent a 6-digit verification code to <span id="display-reg-email" class="font-bold text-gray-900 dark:text-gray-200">your email</span>.
+              </p>
+              
+              <div class="flex justify-center gap-2 mb-4 w-full max-w-sm mx-auto" id="verify-code-inputs">
+                <input type="text" maxlength="1" class="w-12 h-14 text-center text-xl font-bold rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none dark:text-white" />
+                <input type="text" maxlength="1" class="w-12 h-14 text-center text-xl font-bold rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none dark:text-white" />
+                <input type="text" maxlength="1" class="w-12 h-14 text-center text-xl font-bold rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none dark:text-white" />
+                <input type="text" maxlength="1" class="w-12 h-14 text-center text-xl font-bold rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none dark:text-white" />
+                <input type="text" maxlength="1" class="w-12 h-14 text-center text-xl font-bold rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none dark:text-white" />
+                <input type="text" maxlength="1" class="w-12 h-14 text-center text-xl font-bold rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none dark:text-white" />
+              </div>
+              
+              <button type="button" id="resend-code-btn" class="text-primary text-sm font-bold hover:underline transition-all">Resend Code</button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Verification & Security -->
+          <div
+            id="step-4-content"
+            class="space-y-6 hidden transition-all duration-300 opacity-0 relative"
+          >
+            <div
+              class="bg-indigo-50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 rounded-2xl p-5 mb-2"
+            >
+              <h4
+                class="font-bold text-indigo-900 dark:text-indigo-400 mb-2 flex items-center gap-2"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  ></path>
+                </svg>
+                Identity Verification Required
+              </h4>
+              <p
+                class="text-xs text-indigo-700 dark:text-indigo-300 leading-relaxed"
+              >
+                To maintain trust on Freelancify, we require official identity
+                verification. Your facial profile must match your provided
+                documentation. Your data is encrypted end-to-end.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Dynamic Document Upload -->
+              <div class="flex flex-col h-full">
+                <div class="mb-5">
+                  <label
+                    id="doc-label-number"
+                    class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5"
+                    >Passport / ID Number</label
+                  >
+                  <input
+                    type="text"
+                    id="passport-number"
+                    class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl px-4 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400 font-mono tracking-wider"
+                    placeholder="e.g. AB1234567"
+                  />
+                  <p
+                    id="doc-hint"
+                    class="text-[10px] text-gray-500 dark:text-gray-400 mt-1 font-medium tracking-wide upppercase"
+                  >
+                    Standard ID Document
+                  </p>
+                </div>
+
+                <label
+                  id="doc-label-upload"
+                  class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5 mt-auto"
+                  >Upload Front of Document</label
+                >
+                <div
+                  id="passport-dropzone"
+                  class="border-2 border-dashed border-gray-300 dark:border-slate-600 rounded-xl p-6 flex-1 text-center hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors cursor-pointer flex flex-col items-center justify-center min-h-[160px] relative overflow-hidden"
+                >
+                  <svg
+                    class="w-10 h-10 text-gray-400 mb-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
+                    ></path>
+                  </svg>
+                  <span
+                    class="text-sm font-bold text-gray-700 dark:text-gray-300 mb-1"
+                    >Click to browse files</span
+                  >
+                  <span class="text-xs text-gray-500">JPG, PNG (Max 5MB)</span>
+                  <input
+                    type="file"
+                    id="passport-upload"
+                    accept="image/*"
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  />
+                  <img
+                    id="passport-preview"
+                    class="hidden absolute inset-0 w-full h-full object-cover rounded-xl"
+                  />
+                  <div
+                    id="passport-success-overlay"
+                    class="hidden absolute inset-0 bg-green-500/90 flex flex-col items-center justify-center z-10 transition-all"
+                  >
+                    <svg
+                      class="w-10 h-10 text-white mb-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <span class="text-white font-bold text-sm"
+                      >Document Validated</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Face Scan -->
+              <div class="flex flex-col h-full">
+                <label
+                  class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5"
+                  >Live Biomteric Scan</label
+                >
+                <div
+                  id="face-scan-container"
+                  class="border-2 border-slate-700 bg-slate-900 rounded-xl p-0 text-center flex flex-col items-center justify-center flex-1 min-h-[220px] relative overflow-hidden group shadow-inner"
+                >
+                  <!-- Inner Grid Pattern -->
+                  <div
+                    class="absolute inset-0 opacity-20 pointer-events-none"
+                    style="
+                      background-image: radial-gradient(
+                        circle,
+                        #ffffff 1px,
+                        transparent 1px
+                      );
+                      background-size: 16px 16px;
+                    "
+                  ></div>
+
+                  <div
+                    id="scan-placeholder"
+                    class="flex flex-col items-center justify-center h-full text-white p-4 relative z-10"
+                  >
+                    <div
+                      class="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+                    >
+                      <svg
+                        class="w-8 h-8 text-blue-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                          d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                        ></path>
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                          d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <button
+                      type="button"
+                      id="start-scan-btn"
+                      class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold px-6 py-2.5 rounded-lg transition-colors z-10 shadow-lg shadow-blue-900/50"
+                    >
+                      Initialize Scanner
+                    </button>
+                    <p class="text-[10px] text-gray-400 mt-4 max-w-[200px]">
+                      Center your face in the frame. Ensure good lighting.
+                    </p>
+                  </div>
+
+                  <!-- Real video feed -->
+                  <video
+                    id="camera-feed"
+                    class="hidden absolute inset-0 w-full h-full object-cover z-10"
+                    autoplay
+                    muted
+                    playsinline
+                  ></video>
+
+                  <canvas id="snapshot-canvas" class="hidden"></canvas>
+
+                  <!-- Simulated Scanning UI Overlay -->
+                  <div
+                    id="scan-active"
+                    class="hidden absolute inset-0 bg-slate-900/80 flex items-center justify-center z-20 backdrop-blur-sm"
+                  >
+                    <!-- Face Guide Overlay -->
+                    <div
+                      class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                    >
+                      <div
+                        class="w-40 h-52 border-2 border-dashed border-blue-500/50 rounded-full opacity-50"
+                      ></div>
+                    </div>
+                    <div
+                      class="absolute inset-x-8 top-12 border-t border-blue-400/30 flex items-center justify-between"
+                    >
+                      <span
+                        class="text-[8px] text-blue-400 font-mono tracking-widest absolute -top-4"
+                        >BIO_TRACK_ACTIVE</span
+                      >
+                    </div>
+
+                    <div class="relative flex items-center justify-center">
+                      <svg
+                        class="w-20 h-20 text-blue-500 animate-pulse opacity-80"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1"
+                          d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"
+                        ></path>
+                      </svg>
+                      <div
+                        id="scan-line-horizontal"
+                        class="absolute top-0 left-[-40px] right-[-40px] h-[2px] bg-blue-500 shadow-[0_0_15px_3px_rgba(59,130,246,0.6)]"
+                      ></div>
+                    </div>
+
+                    <div class="absolute bottom-6 inset-x-0 text-center">
+                      <span
+                        id="scan-status-text"
+                        class="text-xs font-mono font-bold text-blue-400 uppercase tracking-widest"
+                        >Constructing Mesh...</span
+                      >
+                      <div
+                        class="w-32 h-1 bg-slate-800 rounded-full mx-auto mt-2 overflow-hidden"
+                      >
+                        <div
+                          id="scan-progress-bar"
+                          class="h-full bg-blue-500 w-0 transition-all duration-300"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="scan-success"
+                    class="hidden absolute inset-0 bg-emerald-900/90 flex flex-col items-center justify-center z-30 transition-all duration-500"
+                  >
+                    <div
+                      class="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mb-3 shadow-[0_0_30px_rgba(16,185,129,0.5)]"
+                    >
+                      <svg
+                        class="w-8 h-8 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                          d="M5 13l4 4L19 7"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span
+                      class="text-white font-bold text-sm tracking-wide uppercase"
+                      >Biometric Match Found</span
+                    >
+                    <span
+                      class="text-emerald-200 text-[10px] font-mono mt-1 opacity-80"
+                      >Similarity: 98.4%</span
+                    >
+                  </div>
+
+                  <div
+                    id="scan-error"
+                    class="hidden absolute inset-0 bg-red-900/90 flex flex-col items-center justify-center z-30 p-4 text-center"
+                  >
+                    <div
+                      class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-3 shadow-[0_0_30px_rgba(239,68,68,0.5)]"
+                    >
+                      <svg
+                        class="w-6 h-6 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                          d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span class="text-white font-bold text-sm uppercase mb-1"
+                      >Face Mismatch</span
+                    >
+                    <p class="text-red-200 text-[10px] mb-4">
+                      Ensure adequate lighting and look directly into the
+                      camera.
+                    </p>
+                    <button
+                      type="button"
+                      id="retry-scan-btn"
+                      class="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold px-4 py-2 rounded-lg transition-colors"
+                    >
+                      Retry Biometrics
+                    </button>
+                  </div>
+                </div>
+                <!-- Hidden simulated fields logic -->
+                <input type="hidden" id="face-verified" value="false" />
+              </div>
+            </div>
+
+            <p
+              id="verification-status"
+              class="text-xs font-semibold text-center h-4"
+            ></p>
+          </div>
+
+          <!-- STEP 5: Professional Profile -->
+          <div
+            id="step-5-content"
+            class="space-y-6 hidden transition-all duration-300 opacity-0 relative"
+          >
+            <!-- Setup Profile Section -->
+            <div>
+              <label
+                class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5"
+                >Professional Title</label
+              >
+              <input
+                type="text"
+                id="title"
+                class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400"
+                placeholder="e.g. Senior Full-Stack Developer"
+              />
+            </div>
+
+            <div>
+              <label
+                class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5"
+                >Key Skills (Comma separated)</label
+              >
+              <input
+                type="text"
+                id="skills"
+                class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400"
+                placeholder="React, Node.js, System Architecture"
+              />
+            </div>
+
+            <div
+              class="border-t border-gray-100 dark:border-slate-700/50 pt-5 mt-4"
+            >
+              <label
+                class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5"
+                >Set Secure Password</label
+              >
+              <input
+                type="password"
+                id="reg-password"
+                class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400"
+                placeholder="••••••••"
+              />
+            </div>
+
+            <div class="flex flex-col gap-2 pt-2">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <div class="relative flex items-center justify-center mt-0.5">
+                  <input
+                    type="checkbox"
+                    id="terms-check"
+                    class="peer appearance-none w-5 h-5 border-2 border-gray-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary/50 checked:bg-primary checked:border-primary transition-all"
+                  />
+                  <svg
+                    class="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 pointer-events-none"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                </div>
+                <span
+                  class="text-sm font-medium text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors"
+                >
+                  I agree to the
+                  <a href="#" class="text-primary hover:underline"
+                    >Terms of Service</a
+                  >
+                  and
+                  <a href="#" class="text-primary hover:underline"
+                    >Privacy Policy</a
+                  >
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Form Actions -->
+          <div
+            class="flex gap-3 pt-4 border-t border-gray-100 dark:border-slate-700/50 mt-6"
+          >
+            <button
+              type="button"
+              id="prev-btn"
+              class="hidden flex-1 bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-200 font-bold py-3.5 px-4 rounded-xl border border-gray-300 dark:border-slate-600 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors shadow-sm text-center"
+            >
+              Back
+            </button>
+            <button
+              type="button"
+              id="next-btn"
+              class="flex-1 bg-primary text-white font-bold py-3.5 px-4 rounded-xl hover:bg-primary-600 transition-colors shadow-sm text-center flex items-center justify-center gap-2"
+            >
+              Continue
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </button>
+            <button
+              type="submit"
+              id="submit-btn"
+              class="hidden flex-[2] bg-primary text-white font-bold py-3.5 px-4 rounded-xl hover:bg-primary-600 transition-colors shadow-sm text-center flex items-center justify-center gap-2"
+            >
+              Complete Registration
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <div class="mt-8 text-center" id="footer-login-link">
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Already have an account?
+            <a
+              href="/login.html"
+              class="font-bold text-primary hover:text-primary-600 transition-colors"
+              >Sign in</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- External Script mapping logic -->
+    <script type="module" src="/src/register.js"></script>
+    <style>
+      @keyframes scanDown {
+        0% {
+          top: 0;
+        }
+        50% {
+          top: 100%;
+        }
+        100% {
+          top: 0;
+        }
+      }
+      #scan-line {
+        animation: scanDown 2s ease-in-out infinite;
+      }
+    </style>
+  </body>
+</html>
